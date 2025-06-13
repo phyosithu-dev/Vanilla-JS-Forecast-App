@@ -1,3 +1,5 @@
+
+![weather](https://github.com/user-attachments/assets/93d39d45-03dd-4b11-8ea4-55b453fe7642)
 About The Project
 
 This project was built to practice modern front-end development techniques without relying on any frameworks. It's a demonstration of how to work with third-party APIs, handle asynchronous JavaScript operations, and create a visually engaging and responsive user interface through advanced CSS and DOM manipulation.
