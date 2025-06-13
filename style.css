@@ -1,0 +1,219 @@
+/* Basic Reset and Font */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #1a1a1d;
+  color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Main Container Layout */
+.container {
+  display: flex;
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+  width: 100%;
+  max-width: 1200px;
+  background: #2c2c34;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+/* Left & Right Side Panels */
+.weather-main,
+.weather-forecast {
+  padding: 40px;
+}
+
+.weather-main {
+  background: #232329;
+  flex-basis: 40%; /* Takes up 60% of the width */
+}
+
+.weather-forecast {
+  background-color: #232329;
+  flex-basis: 60%; /* Takes up 40% of the width */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Search Bar */
+.search-container {
+  display: flex;
+  margin-bottom: 30px;
+}
+.search-box {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 15px;
+  border-radius: 15px 0 0 15px;
+  background: #34343d;
+  color: #f0f0f0;
+  font-size: 16px;
+}
+.search-button {
+  border: none;
+  outline: none;
+  padding: 0 20px;
+  background: #4a4a5a;
+  color: #f0f0f0;
+  cursor: pointer;
+  border-radius: 0 15px 15px 0;
+  font-size: 18px;
+  transition: background-color 0.3s;
+}
+.search-button:hover {
+  background: #72706d;
+}
+
+/* Main Weather Display */
+.weather-display {
+  text-align: center;
+}
+.city {
+  font-size: 32px;
+  font-weight: 500;
+}
+.date {
+  font-size: 14px;
+  opacity: 0.7;
+}
+.main-temp-info {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.weather-icon-main i {
+  font-size: 100px;
+  margin-bottom: 20px;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+.temperature {
+  font-size: 50px;
+  font-weight: 600;
+  /* line-height: 1; */
+}
+.weather-description {
+  font-size: 18px;
+  text-transform: capitalize;
+}
+
+/* Weather Details Section */
+.weather-details {
+  display: flex;
+  gap: 40px;
+  justify-content: space-around;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.detail-item i {
+  font-size: 24px;
+  opacity: 0.8;
+}
+.detail-item p:first-of-type {
+  font-weight: 600;
+}
+.detail-item p:last-of-type {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+/* Forecast Section */
+.weather-forecast h2 {
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 10px;
+}
+.hourly-forecast-container,
+.daily-forecast-container {
+  display: flex;
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+  gap: 15px;
+  overflow-x: auto; /* Allows horizontal scrolling */
+  padding-bottom: 15px; /* For scrollbar spacing */
+}
+
+/* Individual Forecast Cards */
+.hourly-card,
+.daily-card {
+  min-width: 100px;
+  text-align: center;
+  padding: 15px;
+  border-radius: 15px;
+  /* Glassmorphism Effect */
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.hourly-card i,
+.daily-card i {
+  font-size: 28px;
+  margin: 10px 0;
+}
+.hourly-card p,
+.daily-card p {
+  font-size: 14px;
+}
+.daily-card .day-name {
+  font-weight: 600;
+}
+
+/* Scrollbar styling */
+.hourly-forecast-container::-webkit-scrollbar,
+.daily-forecast-container::-webkit-scrollbar {
+  height: 8px;
+}
+.hourly-forecast-container::-webkit-scrollbar-thumb,
+.daily-forecast-container::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .container {
+    flex-direction: column;
+  }
+  .weather-main,
+  .weather-forecast {
+    flex-basis: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  body {
+    padding: 10px;
+  }
+  .weather-main,
+  .weather-forecast {
+    padding: 25px;
+  }
+  .temperature {
+    font-size: 60px;
+  }
+  .weather-icon-main i {
+    font-size: 80px;
+  }
+  .weather-details {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+}
